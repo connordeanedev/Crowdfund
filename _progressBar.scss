@@ -1,0 +1,15 @@
+.rogress {
+  border-radius: 20px;
+  background-color: #000000;
+  height: 12px;
+  width: 286px;
+}
+
+.rogress-done {
+  border-radius: 20px;
+  background-color: #3cb4aa;
+  height: 12px;
+  width: 200px;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}

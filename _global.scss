@@ -1,0 +1,68 @@
+@import "./mixins";
+* {
+
+  html {
+    font-size: 100%;
+    
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(251, 251, 251);
+  font-family: "Commissioner", sans-serif;
+  box-sizing: border-box;
+}
+
+// flex
+
+.flex {
+  display: flex;
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// Visibility
+
+.hide-for-mobile {
+  // hide for tablet
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  // hide for desktop
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+// buttons
+
+button {
+  height: 58px;
+  width: 219px;
+  border-radius: 50px;
+  border: none;
+  background-color: $moderateCyan;
+  color: white;
+  font-size: $fontBody;
+  font-weight: 600;
+}
