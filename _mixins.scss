@@ -1,0 +1,171 @@
+@media (min-width: 64em) {
+  .header {
+    padding: 1.3125rem 10.4375rem 0 10.4375rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+      url(image-hero-desktop.jpg);
+  }
+
+  .hero {
+    font-size: 16px;
+
+    &__buttons {
+      justify-content: space-between;
+      button {
+        margin-left: 40px;
+      }
+      img {
+        position: relative;
+        left: 2.1875rem;
+      }
+    }
+    &__info {
+      width: 730px;
+      height: 270px;
+      flex-shrink: 0;
+    }
+  }
+  .donation {
+    position: relative;
+    top: -5rem;
+    &__container {
+      display: flex;
+    }
+    &__info {
+      height: 210px;
+      width: 730px;
+    }
+    &__backed {
+      margin-left: 45px;
+    }
+
+    &__days {
+      margin-right: 145px;
+    }
+    #lineBreak {
+      display: flex;
+      width: 65px;
+      top: 60px;
+      transform: rotate(90deg);
+    }
+    &__progress {
+      margin-top: 30px;
+      flex-shrink: 0;
+      position: relative;
+      left: 60%;
+      background-color: $XlightGray;
+      border-radius: 20px;
+      width: 635px;
+      height: 12px;
+    }
+
+    &__amount {
+      background-color: $moderateCyan;
+      border-radius: 20px;
+      width: 222px;
+      height: 12px;
+    }
+  }
+  .about {
+    &__pledges {
+      position: relative;
+      top: -250px;
+    }
+    &__info {
+      position: relative;
+      top: -280px;
+      width: 730px;
+    }
+    &__bamboo {
+      width: 635px;
+      height: 250px;
+    }
+    &__black {
+      width: 635px;
+      height: 250px;
+    }
+    &__mahogany {
+      width: 635px;
+      height: 250px;
+    }
+  }
+}
+@media (max-width: 64em) {
+  .header {
+    padding: 1.3125rem 2.0625rem 0 2.0625rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent),
+      url(image-hero-mobile.jpg);
+  }
+  .hero {
+    height: 16.25rem;
+    &__buttons {
+      h2 {
+        display: none;
+      }
+    }
+  }
+  .donation {
+    &__info {
+      height: 26.25rem;
+      width: 333px;
+    }
+    #lineBreak {
+      width: 85px;
+    }
+    &__progress {
+      background-color: $XlightGray;
+      border-radius: 20px;
+      width: 285px;
+      height: 12px;
+    }
+
+    &__amount {
+      background-color: $moderateCyan;
+      border-radius: 20px;
+      width: 222px;
+      height: 12px;
+    }
+  }
+  .about {
+    &__info {
+      width: 333px;
+    }
+    &__bamboo {
+      width: 285px;
+      height: 380px;
+    }
+    &__black {
+      width: 285px;
+      height: 380px;
+    }
+    &__mahogany {
+      width: 285px;
+      height: 380px;
+    }
+  }
+}
+
+//640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "63.9376em",
+  "xlarge": "87.5em",
+);
+
+// 639px. 1023px, 1399px
+$breakpoints-down: (
+  "small": "39.93675em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
